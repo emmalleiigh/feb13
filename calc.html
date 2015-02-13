@@ -12,27 +12,33 @@
         var num2= 0;
         var total= 0;
         
+        var showNumber = function(){
+               $("#display").html("<h1>"+total+"</h1>");
+            
+        }
+        var getNumber = function(){
+              num1 = parseInt($("#num1").val());
+              num2 = parseInt($("#num2").val());
+            
+        };
+        
         var add = function(){
-               num1 = parseInt($("#num1").val());
-               num2 = parseInt($("#num2").val());
+               getNumber();
                total = num1 + num2;
         }
         
         var sub = function(){
-             num1 = parseInt($("#num1").val());
-             num2 = parseInt($("#num2").val());
+             getNumber();
              total = num1 - num2;
         }
         
          var mult = function(){
-             num1 = parseInt($("#num1").val());
-             num2 = parseInt($("#num2").val());
+             getNumber();
              total = num1 * num2;
         }
          
          var div = function(){
-             num1 = parseInt($("#num1").val());
-             num2 = parseInt($("#num2").val());
+             getNumber();
              total = num1 / num2;
         }
         
@@ -40,7 +46,7 @@
        $("#add").click(
             function(){
                add();
-                $("#display").html("<h1>"+total+"</h1>");
+               showNumber();
             }
         );
         
@@ -48,8 +54,7 @@
         $("#sub").click(
             function(){
                 sub();
-                
-                $("#display").html("<h1>"+total+"</h1>");
+                showNumber();
             }
         );
         
@@ -57,8 +62,7 @@
         $("#mult").click(
             function(){
                 mult();
-                
-                $("#display").html("<h1>"+total+"</h1>");
+                showNumber();
             }
         );
         
@@ -66,9 +70,7 @@
         $("#div").click(
             function(){
                 div();
-                
-                
-                $("#display").html("<h1>"+total+"</h1>");
+                showNumber();
             }
         );
     }
